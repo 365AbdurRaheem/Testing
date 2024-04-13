@@ -1,5 +1,18 @@
-var lc = new RTCPeerConnection();
-var rc = new RTCPeerConnection();
+let config={
+  'iceServers': [
+    {
+      'url': 'stun:stun.l.google.com:19302'
+    },
+    {
+    url: 'turn:turn.anyfirewall.com:443?transport=tcp',
+    credential: 'webrtc',
+    username: 'webrtc'
+    }
+  ]
+}
+
+var lc = new RTCPeerConnection(config);
+var rc = new RTCPeerConnection(config);
 var sendChannel = lc.createDataChannel("sendChannel");
 // var receiveChannel;
 
