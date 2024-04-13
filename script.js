@@ -1,12 +1,10 @@
 let config={
   'iceServers': [
     {
-      'url': 'stun:stun.l.google.com:19302'
-    },
-    {
-    url: 'turn:turn.anyfirewall.com:443?transport=tcp',
-    credential: 'webrtc',
-    username: 'webrtc'
+      'url': ['stun:stun1.l.google.com:19302',
+              'stun:stun2.l.google.com:19302',
+              'stun:stun3.l.google.com:19302',
+              'stun:stun4.l.google.com:19302']
     }
   ]
 }
