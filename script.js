@@ -1,13 +1,5 @@
-let config={
-  'iceServers': [
-    {
-      'url': 'stun:stun1.l.google.com:19302'
-    }
-  ]
-}
-
-var lc = new RTCPeerConnection(config);
-var rc = new RTCPeerConnection(config);
+var lc = new RTCPeerConnection();
+var rc = new RTCPeerConnection();
 var sendChannel = lc.createDataChannel("sendChannel");
 // var receiveChannel;
 
