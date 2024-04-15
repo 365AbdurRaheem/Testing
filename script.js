@@ -1,15 +1,5 @@
-const iceConfiguration = {
-    iceServers: [
-        {
-            urls: 'turn:openrelay.metered.ca:80',
-            username: 'openrelayproject',
-            credentials: 'openrelayproject'
-        }
-    ]
-}
-
-var lc = new RTCPeerConnection(iceConfiguration);
-var rc = new RTCPeerConnection();
+var lc = new RTCPeerConnection();
+iceConfigurationvar rc = new RTCPeerConnection();
 var sendChannel = lc.createDataChannel("sendChannel");
 // var receiveChannel;
 
