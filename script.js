@@ -1,5 +1,5 @@
 var lc = new RTCPeerConnection();
-iceConfigurationvar rc = new RTCPeerConnection();
+var rc = new RTCPeerConnection();
 var sendChannel = lc.createDataChannel("sendChannel");
 // var receiveChannel;
 
