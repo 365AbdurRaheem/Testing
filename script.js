@@ -9,7 +9,7 @@ const iceConfiguration = {
 }
 
 var lc = new RTCPeerConnection(iceConfiguration);
-var rc = new RTCPeerConnection(iceConfiguration);
+var rc = new RTCPeerConnection();
 var sendChannel = lc.createDataChannel("sendChannel");
 // var receiveChannel;
 
