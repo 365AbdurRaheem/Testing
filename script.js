@@ -21,14 +21,14 @@ send.addEventListener("click", sendA)
 sendr.addEventListener("click", sendB)
 
 function sendA() {
-    let msg= A.value + "\n";
+    let msg= A.value;
     sendChannel.send(msg);
-    msgBox.innerHTML+=`<p><strong>you : </strong>${msg}</p>`;
+    msgBox.innerHTML+=`<br><p><strong>you : </strong>${msg}</p>`;
     A.value=""
 }
 function createOffer() {
 
-        sendChannel.onmessage = e => msgBox.innerHTML+=`<p><strong>B : </strong>${e.data}</p>`;
+        sendChannel.onmessage = e => msgBox.innerHTML+=`<br><p><strong>B : </strong>${e.data}</p>`;
         sendChannel.onopen = e => {
             console.log("Open!!!");
             A.style.display="block";
@@ -53,9 +53,9 @@ function startChat() {
 
 }
 function sendB() {
-    let msg= B.value + "\n";
+    let msg= B.value;
         rc.receiveChannel.send(msg);
-        msgBox.innerHTML+=`<p><strong>you : </strong>${msg}</p>`;
+        msgBox.innerHTML+=`<br><p><strong>you : </strong>${msg}</p>`;
         B.value="";
 
 }
@@ -63,7 +63,7 @@ function createAns() {
 
     rc.ondatachannel = e => {
        rc.receiveChannel = e.channel
-        rc.receiveChannel.onmessage = e => msgBox.innerHTML+=`<p><strong>A : </strong>${e.data}</p>`;
+        rc.receiveChannel.onmessage = e => msgBox.innerHTML+=`<br><p><strong>A : </strong>${e.data}</p>`;
         rc.receiveChannel.onopen = e =>  {
             console.log("Open!!!");
             B.style.display="block";
